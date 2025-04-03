@@ -29,9 +29,22 @@
 		E8D8DDBE2D9D9E6F00DC8165 /* parklensUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = parklensUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E8D8DDD42D9DA7E500DC8165 /* Exceptions for "parklens" folder in "parklens" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E8D8DDA32D9D9E6E00DC8165 /* parklens */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E8D8DDA62D9D9E6E00DC8165 /* parklens */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E8D8DDD42D9DA7E500DC8165 /* Exceptions for "parklens" folder in "parklens" target */,
+			);
 			path = parklens;
 			sourceTree = "<group>";
 		};
@@ -396,8 +409,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"parklens/Preview Content\"";
+				DEVELOPMENT_TEAM = 9QA9K4TQ94;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = parklens/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera to scan parking signs and help you understand parking rules.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -424,8 +440,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"parklens/Preview Content\"";
+				DEVELOPMENT_TEAM = 9QA9K4TQ94;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = parklens/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera to scan parking signs and help you understand parking rules.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
