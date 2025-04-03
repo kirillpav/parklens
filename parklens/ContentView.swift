@@ -41,15 +41,41 @@ struct ContentView: View {
         }
      }
 
+    @State private var photoDelegate = PhotoCaptureDelegate()
 
     var body: some View {
-        CameraPreviewView(captureSession: captureSession).edgesIgnoringSafeArea(.all)
+        ZStack {
+            CameraPreviewView(captureSession: captureSession).edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Spacer()
+                Button(action: {
+                    let settings = AVCapturePhotoSettings()
+                    photoOutput.capturePhoto(with: settings, delegate: photoDelegate)
+                }) {
+                    Circle()
+                        .fill(Color.white)
+                        .frame(width: 70, height: 70)
+                        .overlay(Circle().stroke(Color.black, lineWidth: 2))
+                        
+                }
+                .padding(.bottom, 40)
+            }
+        }
+        
+        
     }
 }
 // todo - seld this to new file
 class PhotoCaptureDelegate: NSObject, AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         
+        guard let imageData = photo.fileDataRepresentation(),
+              let image = UIImage(data: imageData) else {
+            return
+        }
+        
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
 }
 
